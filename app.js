@@ -1,3 +1,4 @@
+// document.body.style.backgroundImage = "url('background.jpeg)";
 var map = L.map('map').setView([51.505, -0.09], 13);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -59,6 +60,7 @@ function createDiv (e) {
     console.log(e.latlng.toString())
 }
 map.on('click', createDiv);
+
 
 // L.CustomHandler = L.Handler.extend({
 //     addHooks: function() {

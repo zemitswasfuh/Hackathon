@@ -3,3 +3,13 @@
     border-style: groove;
     border-color: black;
 }
+body {
+    background-image: url('backgrounds.jpg');
+    background-size: cover;
+    
+}
+.coords {
+    background-color: beige;
+    border-style: groove;
+    border-color: black;
+}
