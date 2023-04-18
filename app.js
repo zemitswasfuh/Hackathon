@@ -35,7 +35,7 @@ polygon.bindPopup("I am a polygon.");
 
 // }
 
-map.on('click', onMapClick);
+// map.on('click', onMapClick);
 
 //OnClick event listener creates popup
 var popup = L.popup();
@@ -48,6 +48,17 @@ function onMapClick(e) {
 }
 
 map.on('click', onMapClick);
+
+const mapEl = document.getElementById('map');
+
+function createDiv (e) {
+    const coordsEl = document.getElementsByClassName('coords')
+    let newDiv = document.createElement('div');
+    newDiv.innerText = 'Coordinates: ' + e.latlng.toString()
+    coordsEl[0].append(newDiv)
+    console.log(e.latlng.toString())
+}
+map.on('click', createDiv);
 
 // L.CustomHandler = L.Handler.extend({
 //     addHooks: function() {
@@ -68,22 +79,3 @@ map.on('click', onMapClick);
 // L.Map.addInitHook('addHandler', 'storeData', L.CustomHandler);
 // map.on('click', _storeData);
 
-var myFeatureGroup = L.featureGroup().addTo(map).on("click", groupClick);
-var marker, test;
-
-for (var i = 0; i < 20; i += 1) {
-  test = "test " + i;
-  marker = L.marker(getRandomLatLng()).addTo(myFeatureGroup).bindPopup("Marker " + test);
-  marker.test = test;
-}
-
-function groupClick(event) {
-  console.log("Clicked on marker " + event.layer.test);
-}
-
-function getRandomLatLng() {
-  return [
-    48.86 + 0.1 * Math.random() - 0.05,
-    2.35 + 0.1 * Math.random() - 0.05
-  ];
-}
