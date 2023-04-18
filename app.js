@@ -1,4 +1,3 @@
-// document.body.style.backgroundImage = "url('background.jpeg)";
 var map = L.map('map').setView([51.505, -0.09], 13);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -60,24 +59,4 @@ function createDiv (e) {
     console.log(e.latlng.toString())
 }
 map.on('click', createDiv);
-
-
-// L.CustomHandler = L.Handler.extend({
-//     addHooks: function() {
-//         L.DomEvent.on(document, 'click', this._storeData, this);
-//     },
-
-//     removeHooks: function() {
-//         L.DomEvent.off(document, 'click', this._storeData, this);
-//     },
-
-//     _storeData: function(e) {
-//         const map = document.getElementById('map')
-//         const data = document.createElement('div')
-//         data.innerText = 'Previous Coordinates'
-//         map.apppend(data)
-//     }
-// });
-// L.Map.addInitHook('addHandler', 'storeData', L.CustomHandler);
-// map.on('click', _storeData);
 
